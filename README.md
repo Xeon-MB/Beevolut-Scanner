@@ -86,6 +86,14 @@ A validação da PoC deve seguir o fluxo funcional abaixo:
 | QR Code inválido ou inexistente | A aplicação impede ou informa a impossibilidade do registo | Mensagem de validação apresentada |
 | Produto inexistente | A integridade referencial é preservada | Registo rejeitado ou erro tratado pela aplicação |
 
+### Teste
+
+QR Codes para teste da aplicação: 
+
+| Produto 1 | Produto 2 | Produto 3 |
+| :---: | :---: | :---: |
+| <img width="200" height="200" alt="QR Code 1" src="https://github.com/user-attachments/assets/ab0b05a4-9819-47a1-b7dc-7df36e57a125" /> | <img width="200" height="200" alt="QR Code 2" src="https://github.com/user-attachments/assets/5e76e32e-7c28-4590-83a3-e33194d7f572" /> | <img width="200" height="200" alt="QR Code 3" src="https://github.com/user-attachments/assets/556e93c4-6644-458e-92d1-248261e6ee19" /> |
+
 
 ## Manutenção e contribuições
 
@@ -102,3 +110,6 @@ Este projeto foi desenvolvido no contexto académico do **SENAI — Projeto JTEK
 Alterações futuras devem ser testadas na aplicação e verificadas no banco de dados antes de serem integradas ao projeto.
 
 As alterações no schema SQL, nas consultas ou no fluxo de registo devem ser documentadas para manter a reprodutibilidade da PoC.
+
+
+
