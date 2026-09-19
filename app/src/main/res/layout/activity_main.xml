@@ -46,6 +46,16 @@
         android:textColor="#FFFFFF"
         android:layout_marginBottom="24dp"/>
 
+    <Button
+        android:id="@+id/btnHistorico"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Ver Histórico de Entradas"
+        android:textSize="18sp"
+        android:backgroundTint="#4CAF50"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="16dp"/>
+
     <TextView
         android:id="@+id/txtStatus"
         android:layout_width="wrap_content"

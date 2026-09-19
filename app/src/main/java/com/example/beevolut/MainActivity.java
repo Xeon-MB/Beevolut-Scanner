@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView txtStatus;
     private Button btnCamera;
 
+    private Button btnHistorico;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +33,11 @@ public class MainActivity extends AppCompatActivity {
         inputScanner = findViewById(R.id.inputScanner);
         txtStatus = findViewById(R.id.txtStatus);
         btnCamera = findViewById(R.id.btnCamera);
+        btnHistorico = findViewById(R.id.btnHistorico);
+        btnHistorico.setOnClickListener(v -> {
+            android.content.Intent intent = new android.content.Intent(MainActivity.this, HistoricoActivity.class);
+            startActivity(intent);
+        });
 
         inputScanner.setShowSoftInputOnFocus(false);
         inputScanner.requestFocus();
