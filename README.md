@@ -95,15 +95,18 @@ USE Beevolut;
 GO
 
 SELECT
-    m.id_movimentacao,
-    p.codigo,
-    p.descricao,
-    m.tipo,
-    m.data_movimentacao
-FROM movimentacao AS m
-INNER JOIN produto AS p
-    ON p.id_produto = m.id_produto
-ORDER BY m.id_movimentacao DESC;
+m.id_movimentacao,
+p.id_produto,
+p.nome_produto,
+m.tipo_movimentacao,
+m.horario
+FROM
+movimentacoes AS m
+INNER JOIN
+produto AS p
+ON p.id_produto = m.id_produto
+ORDER BY
+m.id_movimentacao DESC;
 ```
 
 > **Nota:** os nomes das colunas devem ser ajustados caso o schema utilizado no projeto seja diferente do exemplo acima.
