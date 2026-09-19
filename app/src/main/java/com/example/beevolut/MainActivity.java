@@ -9,9 +9,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
-import androidx.activity.result.ActivityResultLauncher;
-import com.journeyapps.barcodescanner.ScanContract;
-import com.journeyapps.barcodescanner.ScanOptions;
+import com.google.mlkit.vision.codescanner.GmsBarcodeScanner;
+import com.google.mlkit.vision.codescanner.GmsBarcodeScannerOptions;
+import com.google.mlkit.vision.codescanner.GmsBarcodeScanning;
+import com.google.mlkit.vision.barcode.common.Barcode;
 
 import java.sql.Connection;
 import java.sql.Statement;
@@ -21,21 +22,6 @@ public class MainActivity extends AppCompatActivity {
     private EditText inputScanner;
     private TextView txtStatus;
     private Button btnCamera;
-
-
-    private final ActivityResultLauncher<ScanOptions> barcodeLauncher = registerForActivityResult(new ScanContract(),
-            result -> {
-                if(result.getContents() != null) {
-                    String codigoLido = result.getContents();
-
-                    txtStatus.setText("Status: A processar leitura da câmera...");
-                    txtStatus.setTextColor(0xFFFFA500);
-
-                    enviarParaBaseDeDados(codigoLido);
-                } else {
-                    Toast.makeText(MainActivity.this, "Leitura cancelada", Toast.LENGTH_SHORT).show();
-                }
-            });
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,14 +54,24 @@ public class MainActivity extends AppCompatActivity {
         });
 
         btnCamera.setOnClickListener(v -> {
-            ScanOptions options = new ScanOptions();
-            options.setPrompt("Aponte para o QR Code do Palete");
-            options.setBeepEnabled(true);
-            options.setOrientationLocked(false);
-            options.setCaptureActivity(com.journeyapps.barcodescanner.CaptureActivity.class);
+            GmsBarcodeScannerOptions options = new GmsBarcodeScannerOptions.Builder()
+                    .setBarcodeFormats(Barcode.FORMAT_QR_CODE)
+                    .enableAutoZoom()
+                    .build();
 
+            GmsBarcodeScanner scanner = GmsBarcodeScanning.getClient(this, options);
 
-            barcodeLauncher.launch(options);
+            scanner.startScan()
+                    .addOnSuccessListener(barcode -> {
+                        String codigoLido = barcode.getRawValue();
+                        txtStatus.setText("Status: A processar leitura da câmara...");
+                        txtStatus.setTextColor(0xFFFFA500);
+                        enviarParaBaseDeDados(codigoLido);
+                    })
+                    .addOnFailureListener(e -> {
+                        txtStatus.setText("Status: Erro na leitura ou cancelada");
+                        txtStatus.setTextColor(0xFFFF0000);
+                    });
         });
     }
 

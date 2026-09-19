@@ -28,7 +28,6 @@
         android:id="@+id/inputScanner"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:hint="O código será digitado aqui"
         android:maxLines="1"
         android:inputType="text"
         android:imeOptions="actionDone"
