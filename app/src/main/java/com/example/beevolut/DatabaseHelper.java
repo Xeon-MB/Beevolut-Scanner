@@ -6,11 +6,11 @@ import java.sql.SQLException;
 
 public class DatabaseHelper {
 
-    private static final String IP = "192.168.1.158";
+    private static final String IP = "sql9001.site4now.net";
     private static final String PORT = "1433";
-    private static final String DATABASE = "Beevolut";
-    private static final String USERNAME = "sa";
-    private static final String PASSWORD = "123";
+    private static final String DATABASE = "db_ace68a_beevolut";
+    private static final String USERNAME = "db_ace68a_beevolut_admin";
+    private static final String PASSWORD = "EE@2025$ajj";
 
     public static Connection getConnection() {
         Connection conn = null;

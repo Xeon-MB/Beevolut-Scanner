@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 Connection conn = DatabaseHelper.getConnection();
 
                 if (conn != null) {
-                    String sql = "INSERT INTO Beevolut.dbo.movimentacoes (id_produto, tipo_movimentacao, horario) VALUES (" + idProduto + ", 'Entrada', GETDATE())";
+                    String sql = "INSERT INTO movimentacao (id_produto, tipo_movimentacao, horario) VALUES (" + idProduto + ", 'Entrada', GETDATE())";
 
                     Statement stmt = conn.createStatement();
                     stmt.executeUpdate(sql);
