@@ -88,10 +88,11 @@ A validação da PoC deve seguir o fluxo funcional abaixo:
 
 ### Teste
 
-Qr Codes para teste de aplicação: 
-<img width="214" height="209" alt="WhatsApp Image 2026-09-18 at 10 40 39 PM" src="https://github.com/user-attachments/assets/ab0b05a4-9819-47a1-b7dc-7df36e57a125" />
-<img width="212" height="202" alt="WhatsApp Image 2026-09-18 at 10 40 47 PM" src="https://github.com/user-attachments/assets/5e76e32e-7c28-4590-83a3-e33194d7f572" />
-<img width="206" height="201" alt="WhatsApp Image 2026-09-18 at 10 40 56 PM" src="https://github.com/user-attachments/assets/556e93c4-6644-458e-92d1-248261e6ee19" />
+QR Codes para teste da aplicação: 
+
+| Produto 1 | Produto 2 | Produto 3 |
+| :---: | :---: | :---: |
+| <img width="200" height="200" alt="QR Code 1" src="https://github.com/user-attachments/assets/ab0b05a4-9819-47a1-b7dc-7df36e57a125" /> | <img width="200" height="200" alt="QR Code 2" src="https://github.com/user-attachments/assets/5e76e32e-7c28-4590-83a3-e33194d7f572" /> | <img width="200" height="200" alt="QR Code 3" src="https://github.com/user-attachments/assets/556e93c4-6644-458e-92d1-248261e6ee19" /> |
 
 
 ## Manutenção e contribuições
